@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>The users</h1>
+        <!--This template iterates over users results and prints them-->
+        {% for user in users.results %} 
+            <p>
+                <b>Username: </b> {{ user.username }}<br>
+                <b>Email: </b> {{ user.email }}<br>
+                <b>URL: </b> {{ users.results }}<br>
+            </p>
+        {% endfor %}
+    </body>
+</html>
