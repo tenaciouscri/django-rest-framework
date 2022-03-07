@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'rest_framework', # Always add this to access DRF interface
 ]
 
 MIDDLEWARE = [
