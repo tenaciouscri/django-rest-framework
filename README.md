@@ -4,6 +4,8 @@ This repository consists of two projects:
 - *provider*
 - *consumer*
 
+These are independent from each other and don't necessarily need to be both Django projects to interact with each other.
+
 PROVIDER = Build, expose and operate APIs.
 
 CONSUMER = Read APIs.
