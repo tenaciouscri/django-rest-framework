@@ -1,8 +1,8 @@
 # Lesson on Django Rest Framework
 
 This repository consists of two projects:
-- provider
-- consumer
+- *provider*
+- *consumer*
 
 PROVIDER = Build, expose and operate APIs.
 
