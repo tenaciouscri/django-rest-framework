@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    # This project does not need Django Rest Framework
 ]
 
 MIDDLEWARE = [
