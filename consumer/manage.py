@@ -3,6 +3,10 @@
 import os
 import sys
 
+# Run on port 7000 to avoid clashing with the provider
+from django.core.management.commands.runserver import Command as runserver
+
+runserver.default_port = "7000" # [1]
 
 def main():
     """Run administrative tasks."""
@@ -20,3 +24,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# [1] Since we are running Provider on port 8000, we have to change the default
+# port for consumers to avoid conflicts.
