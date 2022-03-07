@@ -14,7 +14,12 @@ __________________________________________________________________
 ## Important files to consult per project:
 
 PROVIDER:
-- `provider/urls.py` -> DRF Pagination
 - `users/serializers.py` -> Serializers (with notes)
+- `users/views.py` -> Viewsets (with notes)
 - `users/urls.py` -> Browsable APIs, Routers (with notes)
-- `users/views` -> Viewsets (with notes)
+- `provider/urls.py` -> DRF Pagination
+
+CONSUMER:
+- `manage.py` -> Setting port to 7000
+- `users/views.py` -> Asynchronous View, Rendering APIs
+- `users/templates/users/index.html` -> Template for API Rendering
