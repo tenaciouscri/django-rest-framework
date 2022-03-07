@@ -7,8 +7,9 @@ This repository consists of two projects:
 PROVIDER = Build, expose and operate APIs.
 
 CONSUMER = Read APIs.
+__________________________________________________________________
 
-Important files to consult per project:
+## Important files to consult per project:
 
 PROVIDER:
 - `provider/urls.py` -> DRF Pagination
