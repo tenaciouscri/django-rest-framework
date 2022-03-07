@@ -11,7 +11,7 @@ CONSUMER = Read APIs.
 Important files to consult per project:
 
 PROVIDER:
-- provider/urls.py -> DRF Pagination
-- users/serializers.py -> Serializers (with notes)
-- users/urls.py -> Browsable APIs, Routers
-- users/views -> Viewsets
+- `provider/urls.py` -> DRF Pagination
+- `users/serializers.py` -> Serializers (with notes)
+- `users/urls.py` -> Browsable APIs, Routers (with notes)
+- `users/views` -> Viewsets (with notes)
