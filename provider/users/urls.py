@@ -3,15 +3,17 @@ from django.urls import include, path
 from rest_framework import routers
 from users import views
 
-router = routers.DefaultRouter() # [3]
+router = routers.DefaultRouter()  # [3]
 router.register(r"users", views.UserViewSet)
 router.register(r"groups", views.GroupViewSet)
 
 # Wire up our API automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path("", include(router.urls)), # [2]
-    path("api-auth/", include("rest_framework.urls", namespace="rest_framework")) # [1]
+    path("", include(router.urls)),  # [2]
+    path(
+        "api-auth/", include("rest_framework.urls", namespace="rest_framework")
+    ),  # [1]
 ]
 
 # [1] This url is needed for the REST framework browsable API to work. A browsable API
@@ -26,7 +28,7 @@ urlpatterns = [
 # is running) with the following command:
 # curl -H 'Accept: application/json; indent=4' -u admin:password http://127.0.0.1:8000/users/users/
 #
-# --- EXAMPLE OF LIST --- 
+# --- EXAMPLE OF LIST ---
 # {
 #     "count": 2, <- the number of users
 #     "next": null, <- next results
