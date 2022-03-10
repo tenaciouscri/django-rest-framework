@@ -1,0 +1,13 @@
+# Auth token to connect with provider
+
+AUTH_TOKEN = ""
+
+# To generate a token:
+# - Add "rest_framework.authtoken" to the provider's INSTALLED_APPS
+# - Add "rest_framework.authentication.TokenAuthentication" to
+# REST_FRAMEWORK/"DEFAULT_AUTHENTICATION_CLASSES" in the provider's
+# settings.py file
+# - Migrate
+# - Access the admin panel; you'll find a new category called "Auth Token"
+# - Click on "Tokens" and select the user you want to create the token for
+# - Copy-paste the newly-generated token to the consumer's local_settings.py file
