@@ -5,13 +5,22 @@
     </head>
     <body>
         <h1>The users</h1>
+        <h2>Remote</h2>
         <!--This template iterates over users results and prints them-->
-        {% for user in users.results %} 
+        {% for user in remote_users %} 
             <p>
                 <b>Username: </b> {{ user.username }}<br>
                 <b>Email: </b> {{ user.email }}<br>
-                <b>URL: </b> {{ users.results }}<br>
+                <b>URL: </b> {{ user.url }}<br>
             </p>
+        {% endfor %}
+        <h2>Local</h2>
+        {% for user in local_users %}
+        <p>
+            <b>Username: </b> {{ user.username }}<br>
+            <b>Email: </b> {{ user.email }}<br>
+            <b>URL: </b> {{ user.url }}<br>
+        </p>
         {% endfor %}
     </body>
 </html>
