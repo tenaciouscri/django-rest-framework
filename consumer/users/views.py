@@ -12,18 +12,21 @@ def get_local_users():  # [7]
 
 
 async def index(request):  # [1]
-    async with httpx.AsyncClient() as client:  # [2]
-        response = await client.get(
-            "http://localhost:8000/users/users/", headers={"Authorization": f"Token {settings.AUTH_TOKEN}"},
-        )  # [3]
-    json = response.json()  # [4]
-    remote_users = json["results"]
-    local_users = await sync_to_async(get_local_users, thread_sensitive=True)()  # [8]
-    return render(
-        request,
-        "users/index.html",
-        {"remote_users": remote_users, "local_users": local_users},
-    )  # [5]
+    context = {}
+    try:
+        async with httpx.AsyncClient() as client:  # [2]
+            response = await client.get(
+                "http://localhost:8000/users/users/",
+                headers={"Authorization": f"Token {settings.AUTH_TOKEN}"},
+            )  # [3]
+        json = response.json()  # [4]
+        context["remote_users"] = json["results"]
+    except httpx.RequestError as exc:
+        context["connection_error"] = True
+    context["local_users"] = await sync_to_async(
+        get_local_users, thread_sensitive=True
+    )()  # [8]
+    return render(request, "users/index.html", context)  # [5]
 
 
 # [1] This app does have views, but they're normal, asynchronous views.
