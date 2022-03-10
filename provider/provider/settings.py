@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "users",
     "rest_framework",  # Always add this to access DRF interface
+    "rest_framework.authtoken", # To activate DRF token authentication
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,8 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
     ],
 }
+
+try:
+    from local_settings import *  # noqa
+except ImportError:
+    pass
