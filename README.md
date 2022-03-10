@@ -17,9 +17,9 @@ PROVIDER:
 - `users/serializers.py` -> Serializers (with notes)
 - `users/views.py` -> Viewsets (with notes)
 - `users/urls.py` -> Browsable APIs, Routers (with notes)
-- `provider/urls.py` -> DRF Pagination
+- `provider/settings.py` -> DRF Pagination, DRF Auth Token
 
 CONSUMER:
 - `manage.py` -> Setting port to 7000
-- `users/views.py` -> Asynchronous View, Rendering APIs
+- `users/views.py` -> Asynchronous View, Rendering APIs, Auth Token
 - `users/templates/users/index.html` -> Template for API Rendering
