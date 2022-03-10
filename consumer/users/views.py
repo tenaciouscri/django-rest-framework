@@ -4,6 +4,7 @@ from asgiref.sync import sync_to_async  # [6]
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.conf import settings
 
 
 def get_local_users():  # [7]
@@ -13,7 +14,7 @@ def get_local_users():  # [7]
 async def index(request):  # [1]
     async with httpx.AsyncClient() as client:  # [2]
         response = await client.get(
-            "http://localhost:8000/users/users/", auth=("admin", "weboverlord")
+            "http://localhost:8000/users/users/", headers={"Authorization": f"Token {settings.AUTH_TOKEN}"},
         )  # [3]
     json = response.json()  # [4]
     remote_users = json["results"]
