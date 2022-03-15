@@ -124,6 +124,16 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Redis
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+        "KEY_PREFIX": "consumer",  # Add key prefix so redis can distinguish
+    },
+}
+
+# Local settings
 try:
     from local_settings import *  # noqa
 except ImportError:
